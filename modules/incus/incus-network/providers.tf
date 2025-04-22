@@ -1,5 +1,4 @@
-terraform {
-}
+terraform {}
 
 provider "incus" {
   # Configuration options
