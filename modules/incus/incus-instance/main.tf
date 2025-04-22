@@ -1,4 +1,5 @@
 resource "incus_instance" "this" {
-  name=var.name
+  count=var.instance_count
+  name="instance-${count.index}"
   image=var.image
 }
