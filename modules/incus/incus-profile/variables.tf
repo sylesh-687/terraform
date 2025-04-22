@@ -1,6 +1,10 @@
 variable "name" {
 }
 
+variable "network" {
+    
+}
+
 variable "devices" {
     type=map(object({
         name = string 
