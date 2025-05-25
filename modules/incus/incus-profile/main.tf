@@ -5,7 +5,10 @@ resource "incus_profile" "this" {
         content{
             name       = device.value.name
             type       = device.value.type
-            properties = device.value.properties
+            properties ={
+                for key,val in device.value.properties:
+                key => key == "parent" ? var.network : val
+            }
         }
 
     }
