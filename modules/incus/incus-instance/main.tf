@@ -6,7 +6,7 @@ resource "incus_instance" "this" {
     var.profile
   ]
   config={
-    "limits.cpu" = config.value["limits"].cpu
-    "limits.memory" = config.value["limits"].memory
+    "limits.cpu" = var.config["limits"].cpu
+    "limits.memory" = var.config["limits"].memory
   }
 }
