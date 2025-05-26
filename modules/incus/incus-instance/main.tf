@@ -5,4 +5,11 @@ resource "incus_instance" "this" {
   profiles=[
     var.profile
   ]
+  dynamic "config" {
+    for_each = var.config
+    content {
+      "limits.cpu" = config.value.cpu
+      "limits.memory" = config.value.memory
+    }
+  }
 }
