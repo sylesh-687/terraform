@@ -10,10 +10,16 @@ variable "profile"{
 }
 
 variable "config" {
-    type=map(string)
-    default={
-    "limits.cpu" = "1"
-    "limits.cpu"     = "1"
+  type = map(object({
+    cpu    = string
+    memory = string
+  }))
+  default = {
+    limits = {
+      cpu    = "1"
+      memory = "512MB"
     }
+  }
 }
+
 

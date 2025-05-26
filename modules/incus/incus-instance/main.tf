@@ -8,8 +8,8 @@ resource "incus_instance" "this" {
   dynamic "config" {
     for_each = var.config
     content {
-      "limits.cpu" = config.value.cpu
-      "limits.memory" = config.value.memory
+      "limits.cpu" = config.value["limits"].cpu
+      "limits.memory" = config.value["limits"].memory
     }
   }
 }
