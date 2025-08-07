@@ -9,6 +9,10 @@ variable "network" {
 
 }
 
+variable "network" {
+    
+}
+
 variable "devices" {
   type = map(object({
     name       = string
